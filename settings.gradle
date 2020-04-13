@@ -1,0 +1,2 @@
+rootProject.name='EarthQuakeTracker'
+include ':app'

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".UI.EarthQuakeDetailActivity">
+
+    <androidx.cardview.widget.CardView
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <LinearLayout
+            android:background="@drawable/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Link"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/linkedTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/categoryTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Latitude"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/latTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/longTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/descriptionTxt"
+                android:layout_width="match_parent"
+                android:layout_height="203dp"
+                android:gravity="center_horizontal"
+                android:text="title"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

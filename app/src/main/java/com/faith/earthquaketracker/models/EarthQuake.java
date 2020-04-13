@@ -1,5 +1,7 @@
 package com.faith.earthquaketracker.models;
 
+//Mbatha Faith S1803443
+
 //model class to store data
 public class EarthQuake {
 

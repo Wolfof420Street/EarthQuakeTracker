@@ -1,10 +1,12 @@
 package com.faith.earthquaketracker.UI;
-
+//Mbatha Faith S1803443
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.faith.earthquaketracker.R;
@@ -19,6 +21,7 @@ public class EarthQuakeDetailActivity extends AppCompatActivity {
     TextView latTxt;
     TextView longTxt;
     TextView descriptionTxt;
+    ImageView bckBtn;
 
     //defining variables
     String title;
@@ -42,6 +45,7 @@ public class EarthQuakeDetailActivity extends AppCompatActivity {
         latTxt = findViewById(R.id.latTxt);
         longTxt = findViewById(R.id.longTxt);
         descriptionTxt = findViewById(R.id.descriptionTxt);
+        bckBtn = findViewById(R.id.backBtn);
 
         //getting data from previous activity
 
@@ -65,6 +69,15 @@ public class EarthQuakeDetailActivity extends AppCompatActivity {
         latTxt.setText(lat);
         longTxt.setText(longtd);
         descriptionTxt.setText(description);
+
+        //backBtn
+        bckBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EarthQuakeDetailActivity.this, MainActivity.class));
+                finish();
+            }
+        });
 
 
     }

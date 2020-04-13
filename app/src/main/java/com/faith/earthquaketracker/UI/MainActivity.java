@@ -1,6 +1,8 @@
 package com.faith.earthquaketracker.UI;
+//Mbatha Faith S1803443
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -134,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 // First item is disable and it is used for hint
                 if(position > 0){
                     filter = selectedItemText;
+                    filterMore(filter);
                 }
             }
 
@@ -186,7 +189,87 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void filterMore(String toString) {
+        //new array list that will hold the filtered data
+        ArrayList<EarthQuake> filtered = new ArrayList<>();
 
+        //variables
+        Double largest_magnitude;
+        Double deepest;
+        Double shallowest;
+        String location;
+        String depth;
+        String magnitude;
+        String[] locations;
+        String[] depths;
+        String[] magnitudes;
+        String locashen;
+        String depthdd;
+        String magnituded;
+
+
+        //ArrayLists to Store individual entities
+
+        ArrayList<String> loctn = new ArrayList<>();
+        ArrayList<Double> mgtd = new ArrayList<>();
+        ArrayList<Double> dpth = new ArrayList<>();
+
+
+        for (EarthQuake earthQuake : filteredNames) {
+            String description = earthQuake.description;
+
+            //splitting the description String
+            String[] descriptions = description.split(";");
+            location = descriptions[1];
+            depth = descriptions[3];
+            magnitude = descriptions[4];
+
+            //Splitting the individual entities to get specific values for comparison
+            locations = location.split(":");
+            depths = depth.split(":");
+            magnitudes = magnitude.split(":");
+            locashen = locations[1];
+            depthdd = depths[1];
+            magnituded = magnitudes[1];
+
+
+            loctn.add(locashen);
+            mgtd.add(Double.parseDouble(magnituded.trim()));
+            dpth.add(Double.parseDouble(depthdd.replaceAll("km", "").trim()));
+
+            //checking for highest values
+
+            largest_magnitude = Collections.max(mgtd);
+            deepest = Collections.max(dpth);
+            shallowest = Collections.min(dpth);
+
+            //populating ArrayList based on user choices
+
+            for(int i = 0; i < mgtd.size(); i++) {
+                Log.d("Oyyaa", mgtd.get(i).toString());
+                if(toString.toLowerCase().contains("Largest Magnitude") && largest_magnitude >= mgtd.get(i)){
+                    filtered.add(earthQuake);
+                }
+            }
+            for(int i = 0; i < dpth.size(); i++) {
+                if(toString.toLowerCase().contains("Deepest") && deepest >= dpth.get(i)){
+                    filtered.add(earthQuake);
+                }
+               else if(toString.toLowerCase().contains("Shallowest") && shallowest <= dpth.get(i)){
+                    filtered.add(earthQuake);
+                }
+            }
+
+
+        }
+
+
+
+        earthQuakeListAdapter.filterList(filtered);
+
+
+
+    }
 
 
     //pulling XML data
